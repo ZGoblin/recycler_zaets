@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Recycler Zaets</string>
+    <string name="my_name">My name</string>
+    <string name="my_age">My age</string>
+</resources>
