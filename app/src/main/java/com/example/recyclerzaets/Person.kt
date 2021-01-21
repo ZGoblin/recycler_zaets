@@ -6,7 +6,9 @@ class Person {
     val mother: Person?
     val father: Person?
     var siblings: HashSet<Person> = hashSetOf<Person>()
+        private set
     var numberOfRelatives: Int = 0
+        private set
 
     constructor(name: String, age: Int, mother: Person?, father: Person?) {
         this.name = name
@@ -18,6 +20,7 @@ class Person {
 
     fun addSiblings(person: Person) {
         siblings.add(person)
+        reloadNumberOfRelatives()
     }
 
     fun reloadNumberOfRelatives() {

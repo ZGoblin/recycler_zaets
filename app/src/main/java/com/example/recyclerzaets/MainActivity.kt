@@ -3,7 +3,6 @@ package com.example.recyclerzaets
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerzaets.databinding.ActivityMainBinding
 
@@ -50,8 +49,6 @@ class MainActivity : AppCompatActivity() {
         val mother = Person("Lilia Zaets", 40, motherOfMyMother, fatherOfMyMother)
         val father = Person("Sergeii Zaets", 43, motherOfMyFather, fatherOfMyFather)
 
-        val itsMe = Person("Oleg Zaets", 20, mother, father)
-
-        return itsMe
+        return Person("Oleg Zaets", 20, mother, father)
     }
 }

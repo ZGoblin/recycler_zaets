@@ -1,6 +1,5 @@
 package com.example.recyclerzaets
 
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerzaets.databinding.ViewLayoutBinding
 
 class MyAdapter(private val items: List<Person>): RecyclerView.Adapter<MyViewHolder>() {
-    private var padding = 50
 
     private fun countDistance(startPerson: Person, lookingFor: Person, distance: Int = 0): Int {
         if (startPerson == lookingFor) return distance
@@ -37,7 +35,14 @@ class MyAdapter(private val items: List<Person>): RecyclerView.Adapter<MyViewHol
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(items[position], countDistance(items[0], items[position])*padding)
+        val person = items[position]
+        val startPerson = items[0]
+        val distance = countDistance(startPerson, person)
+        holder.bind(person, distance*UNIT_PADDING)
+    }
+
+    companion object {
+        const val UNIT_PADDING = 50
     }
 }
 
